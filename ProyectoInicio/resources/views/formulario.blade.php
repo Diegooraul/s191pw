@@ -1,12 +1,10 @@
+@extends ('layouts.plantilla1')
+@section('titulo','formulario clientes')
 
-{{-- INICIA TARJETA CON FORMULARIO --}}
-@extends('layouts.plantilla1')
+{{--para encerrar los contenidos y me de una buena estructura--}}
+  @section('contenido')
 
-@section('titulo','Formulario Clientes')
-
-@section('contenido')
-
-
+{{--inicia la tarjeta de formulario--}}
 <div class="container mt-5 col-md-6">
 
 <div class="card font-monospace">
@@ -40,5 +38,7 @@
   </div>
 </div>
 </div>
-
+</body>
+</html>
+{{--para delimitar la seccion de codigo--}}
 @endsection
