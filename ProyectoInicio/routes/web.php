@@ -5,7 +5,7 @@ use App\Http\Controllers\controladorVistas;
 
 Route::get('/',[controladorVistas::class,'home' ])->name('inicio');
 Route::get('/formulario',[controladorVistas::class,'insert' ])->name('rutacacas');
-Route::get('/consultar',[controladorVistas::class,'select' ])->name('rutaconsulta');
+Route::get('/consultar',[controladorVistas::class,'select' ])->name('rutaconsultar');
 
 
 /* Route::get('/', function () {
@@ -32,3 +32,4 @@ las rutas se comentan con la tecla shit+alt+a
 */
 
 Route::view('/component','componentes')->name('rutacomponent');
+Route::post('/enviarCliente',[controladorVistas::class,'procesarCliente' ])->name('rutaenviar');
