@@ -6,8 +6,26 @@
 
 {{--inicia la tarjeta de formulario--}}
 <div class="container mt-5 col-md-6">
+{{--@dump id--}}
 
+@if(session('exito'))
+<x-Alert tipo="success">{{ session('exito') }} </x-Alert>
+@endif
+
+@session('exito')
+<x-Alert tipo="warning">{{ $value }} </x-Alert>
 <div class="card font-monospace">
+@endsession  
+
+@session('exito')
+<script>
+Swal.fire({
+  title: "Respuesta del Servidor",
+  text: '{{ $value }}',
+  icon: "success"});
+</script>
+@endsession  
+
   <div class="card-header fs-5 text-center text-primary">
     Registro de Clientes
  </div>
@@ -16,7 +34,7 @@
   <form method="POST" action="/enviarCliente">
     @csrf
 
-    
+
     <div class="mb-3">
       <label for="Nombre" class="form-label">Nombre: </label>
       <input type="text" class="form-control" name="txtnombre">
